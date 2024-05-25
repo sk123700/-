@@ -1,0 +1,53 @@
+import javax.swing.*;
+import java.awt.*;
+import java.awt.event.*;
+
+public class LoginUI extends JFrame {
+    public LoginUI(String msg) {
+        super(msg);
+        setLayout(new FlowLayout());
+
+        JPanel p1, p2, p3;
+        JLabel llg, lpw;
+        JTextField Username;
+        JPasswordField passwd;
+        JButton confirmButton; // 확인 버튼 추가
+
+        p1 = new JPanel();
+        p2 = new JPanel();
+        p3 = new JPanel();
+
+        llg = new JLabel("Username");
+        lpw = new JLabel("Password");
+
+        Username = new JTextField(20);
+        passwd = new JPasswordField(20);
+        confirmButton = new JButton("로그인"); // 확인 버튼 생성
+
+        p1.add(llg);
+        p1.add(Username);
+        p2.add(lpw);
+        p2.add(passwd);
+        p3.add(confirmButton); // 패널에 확인 버튼 추가
+
+        add(p1);
+        add(p2);
+        add(p3); // 확인 버튼 패널 추가
+        setSize(500, 400);
+        setVisible(true);
+
+        // 확인 버튼 클릭 이벤트 처리
+        confirmButton.addActionListener(new ActionListener() {
+            public void actionPerformed(ActionEvent e) {
+                // 여기에 로그인 로직을 추가하세요
+                String username = Username.getText();
+                String password = new String(passwd.getPassword());
+
+            }
+        });
+    }
+
+    public static void main(String[] args) {
+        LoginUI loginUI = new LoginUI("Login UI");
+    }
+}

@@ -1,0 +1,5 @@
+public class LoginUIMain {
+    public static void main(String[] args) {
+        LoginUI loginUI = new LoginUI("Login UI");
+    }
+}
